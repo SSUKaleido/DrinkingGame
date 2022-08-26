@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject CoverImage;
+    public GameObject PracticeMode_SelectMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -19,18 +20,26 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void LoadPracticeMode()
-    {
+    public void LoadPracticeMode() {
+        PracticeMode_SelectMenu.SetActive(true);
         CoverImage.SetActive(false);
     }
 
-    public void LoadRealMode()
-    {
+    public void LoadRealMode() {
         SceneManager.LoadScene("RealMode_Scene");
     }
 
-    public void Conclusion()
-    {
+    public void LoadStartMenu() {
+        if(SceneManager.GetActiveScene().name == "StartScene") {
+            CoverImage.SetActive(true);
+            PracticeMode_SelectMenu.SetActive(false);
+        }
+        else if (SceneManager.GetActiveScene().name == "RealMode_Scene") {
+            SceneManager.LoadScene("StartScene");
+        }
+    }
+
+    public void Conclusion() {
         Application.Quit();
     }
 }
