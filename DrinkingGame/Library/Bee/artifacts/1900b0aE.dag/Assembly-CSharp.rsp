@@ -387,6 +387,8 @@
 "Assets/Others/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/Others/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/SelectMenu_CloseExplain.cs"
+"Assets/Scripts/SelectMenu_LoadExplain.cs"
 -langversion:9.0
 
 /deterministic

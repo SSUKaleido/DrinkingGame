@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public CanvasGroup PracticeMode_RabbitGame_Group;
     public CanvasGroup PracticeMode_FruitsGame_Group;
 
+    public GameObject ExplainMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
     public void LoadPracticeMode() {
         PracticeMode_SelectMenu.enabled = true;
         PracticeMode_SelectMenu_Group.interactable = true;
+        ExplainMenu.SetActive(false);
         StartMenu.enabled = false;
     }
 
