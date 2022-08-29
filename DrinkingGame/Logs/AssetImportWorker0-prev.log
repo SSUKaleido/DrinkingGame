@@ -15,7 +15,7 @@ C:/Users/user/OneDrive/문서/GitHub/DrinkingGame/DrinkingGame
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60017
+59116
 Successfully changed project path to: C:/Users/user/OneDrive/문서/GitHub/DrinkingGame/DrinkingGame
 C:/Users/user/OneDrive/문서/GitHub/DrinkingGame/DrinkingGame
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/user/OneDrive/문서/GitHub/DrinkingGame/DrinkingGame
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 305.38 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 372.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Users/user/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -63,89 +63,89 @@ Initialize mono
 Mono path[0] = 'C:/Users/user/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Users/user/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Users/user/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56472
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56456
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Users/user/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.030413 seconds.
+Registered in 0.018437 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 230.82 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 364.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.771 seconds
+- Completed reload, in  2.412 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1772ms)
-		BeginReloadAssembly (205ms)
+	ReloadAssembly (2414ms)
+		BeginReloadAssembly (240ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (1174ms)
-			LoadAssemblies (200ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (1708ms)
+			LoadAssemblies (231ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (265ms)
+			SetupTypeCache (343ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (91ms)
-			SetupLoadedEditorAssemblies (704ms)
+			RebuildScriptCaches (127ms)
+			SetupLoadedEditorAssemblies (1036ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (23ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (231ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (341ms)
-				ProcessInitializeOnLoadMethodAttributes (106ms)
+				InitializePlatformSupportModulesInManaged (33ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (364ms)
+				BeforeProcessingInitializeOnLoad (5ms)
+				ProcessInitializeOnLoadAttributes (478ms)
+				ProcessInitializeOnLoadMethodAttributes (155ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.021990 seconds.
+Registered in 0.027730 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\user\OneDrive\문서\GitHub\DrinkingGame\DrinkingGame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\user\OneDrive\문서\GitHub\DrinkingGame\DrinkingGame\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.351 seconds
+- Completed reload, in  3.797 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3353ms)
-		BeginReloadAssembly (412ms)
+	ReloadAssembly (3799ms)
+		BeginReloadAssembly (372ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (29ms)
+			DisableScriptedObjects (17ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (55ms)
-		EndReloadAssembly (2473ms)
-			LoadAssemblies (288ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (2914ms)
+			LoadAssemblies (272ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (841ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (171ms)
-			SetupLoadedEditorAssemblies (1114ms)
+			SetupTypeCache (927ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (184ms)
+			SetupLoadedEditorAssemblies (1372ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (2ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (268ms)
-				ProcessInitializeOnLoadAttributes (715ms)
-				ProcessInitializeOnLoadMethodAttributes (97ms)
-				AfterProcessingInitializeOnLoad (18ms)
-				EditorAssembliesLoaded (0ms)
+				BeforeProcessingInitializeOnLoad (407ms)
+				ProcessInitializeOnLoadAttributes (831ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
+				AfterProcessingInitializeOnLoad (19ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.96 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 2.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3467 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 29 unused Assets / (111.3 KB). Loaded Objects now: 3929.
 Memory consumption went from 123.4 MB to 123.3 MB.
-Total: 5.444700 ms (FindLiveObjects: 0.411000 ms CreateObjectMapping: 0.307400 ms MarkObjects: 4.586200 ms  DeleteObjects: 0.138600 ms)
+Total: 7.286200 ms (FindLiveObjects: 0.504800 ms CreateObjectMapping: 0.280000 ms MarkObjects: 6.327900 ms  DeleteObjects: 0.172000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,49 +159,8 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 7071473.670363 seconds.
-  path: Assets/BarProps/Textures/Tables/TallRoundTable
-  artifactKey: Guid(438b635af2ab39a448953cbd3a8e7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/Tables/TallRoundTable using Guid(438b635af2ab39a448953cbd3a8e7600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af458688c91e6878499d62b6d180c8df') in 0.027478 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.207475 seconds.
-  path: Assets/BarProps/Textures/Tables/TallRoundTable/TallRoundTable_TallRoundTable-material_MetallicSmoothness.png
-  artifactKey: Guid(6c3c30f9932ddb2419022745d9d76ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/Tables/TallRoundTable/TallRoundTable_TallRoundTable-material_MetallicSmoothness.png using Guid(6c3c30f9932ddb2419022745d9d76ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be0e8b37f6cb9201d95572e743413a15') in 0.187191 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 46.051591 seconds.
-  path: Assets/BarProps/Textures/OldSchoolBarstool
-  artifactKey: Guid(ec72f72779311d34fb09058e08efa57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/OldSchoolBarstool using Guid(ec72f72779311d34fb09058e08efa57b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36ac3f1af9cb62490def0531fb66d0a0') in 0.025614 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.140980 seconds.
-  path: Assets/BarProps/Textures/WoodenSeats
-  artifactKey: Guid(b4b261d62a7b5224b8c9523e1292f437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/WoodenSeats using Guid(b4b261d62a7b5224b8c9523e1292f437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '516196e07a3aac7f6e3ac712aa1d13ef') in 0.020097 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.157261 seconds.
-  path: Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack
-  artifactKey: Guid(f5a9b61cc1663a0479c6855cb61f9fcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack using Guid(f5a9b61cc1663a0479c6855cb61f9fcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff48aff301b8d943595a229a0f2cde91') in 0.009809 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.365949 seconds.
-  path: Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack/WoodenSwivelStoolNoBack_WoodenSwivelStoolNoBack_001-material_AlbedoTransparency.png
-  artifactKey: Guid(9327062b93f0d06429c15c1cf2fb2db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack/WoodenSwivelStoolNoBack_WoodenSwivelStoolNoBack_001-material_AlbedoTransparency.png using Guid(9327062b93f0d06429c15c1cf2fb2db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756dfeb119a9d0b13f492ff49c8b7ce7') in 0.034045 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.331024 seconds.
-  path: Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack/WoodenSwivelStoolNoBack_WoodenSwivelStoolNoBack_001-material_MetallicSmoothness.png
-  artifactKey: Guid(1d2d25263bb098840917be21a4a7de9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Textures/WoodenSeats/WoodenSwivelStoolNoBack/WoodenSwivelStoolNoBack_WoodenSwivelStoolNoBack_001-material_MetallicSmoothness.png using Guid(1d2d25263bb098840917be21a4a7de9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e375fde7ccbefc24a812a6be357b50c9') in 0.039512 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 58.701686 seconds.
-  path: Assets/BarProps/Prefabs/RoundTable.dae
-  artifactKey: Guid(2a4091fd6acfbeb468005c5cf0e37038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BarProps/Prefabs/RoundTable.dae using Guid(2a4091fd6acfbeb468005c5cf0e37038) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '256f69d8e4f820bf4af5c5264f2079fc') in 0.256287 seconds 
+  Time since last request: 7142465.212261 seconds.
+  path: Assets/BarProps/Prefabs/SquareTable.dae
+  artifactKey: Guid(60e892bc26a066649ab14df704128623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BarProps/Prefabs/SquareTable.dae using Guid(60e892bc26a066649ab14df704128623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1898144a4edd1270b3162c63ad0bd031') in 0.431366 seconds 
+debugger-agent: DWP handshake failed.
