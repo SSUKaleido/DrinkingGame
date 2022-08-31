@@ -59,11 +59,11 @@ public class BaskinGameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) && GameMode == 1 && IcecreamSlot < 3)
                 AddIcecreamNum();
 
-            if (BaskinNum >= 31)
-                GameOver(false);
-
             if (GameMode == 2)
                 ComputerPlay();
+
+            if (BaskinNum >= 31)
+                GameOver(false);
         }
     }
 
@@ -122,10 +122,10 @@ public class BaskinGameManager : MonoBehaviour
         else if (IsPlayersIcon == true && IcecreamSlot == 3)
             Players_Icecream3.enabled = true;
         else if (IsPlayersIcon == false && Computers_Icecream1.enabled == false)
-            Computers_Icecream1.enabled = false;
+            Computers_Icecream1.enabled = true;
         else if (IsPlayersIcon == false && Computers_Icecream1.enabled == true)
-            Computers_Icecream2.enabled = false;
-        else if (IsPlayersIcon == false && Computers_Icecream3 == true)
-            Computers_Icecream3.enabled = false;
+            Computers_Icecream2.enabled = true;
+        else if (IsPlayersIcon == false && Computers_Icecream2.enabled == true)
+            Computers_Icecream3.enabled = true;
     }
 }

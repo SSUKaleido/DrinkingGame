@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:DrinkingGame/Assets/BarProps/Textures/Tables/RoundTable/RoundTable_RoundTable-material_MetallicSmoothness.png.meta
-guid: efaf06cf0755ba34e92ea7b98f6cd9b3
-========
-guid: 521bd64361af2d648a12cdc064ea1e07
->>>>>>>> Baskin_Jongeun:DrinkingGame/Assets/Textures/OtherSprite/ice-cream (1).png.meta
+guid: 0bdd00ca5a680804baeb61c6cf64b1b0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -66,7 +62,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -91,7 +87,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
@@ -103,7 +99,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
