@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:DrinkingGame/Assets/BarProps.meta
 guid: 885ae7dd575f0174a88583427e98740b
+========
+guid: bfc1a2f42a9c9dc409cd72e6c9233cfb
+>>>>>>>> Baskin_Jongeun:DrinkingGame/Assets/Textures/ButtonGUI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
