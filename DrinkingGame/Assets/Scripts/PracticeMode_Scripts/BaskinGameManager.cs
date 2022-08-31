@@ -59,11 +59,11 @@ public class BaskinGameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return) && GameMode == 1 && IcecreamSlot < 3)
                 AddIcecreamNum();
 
-            if (GameMode == 2)
-                ComputerPlay();
-
             if (BaskinNum >= 31)
                 GameOver(false);
+
+            if (GameMode == 2)
+                ComputerPlay();
         }
     }
 
@@ -74,7 +74,12 @@ public class BaskinGameManager : MonoBehaviour
         BaskinNum = 0;
         IcecreamSlot = 0;
         GuideText.text = "Enter키를 눌러 숫자를 올릴 수 있습니다";
-        //다른 기타 것들 초기화
+        Players_Icecream1.enabled = false;
+        Players_Icecream2.enabled = false;
+        Players_Icecream3.enabled = false;
+        Computers_Icecream1.enabled = false;
+        Computers_Icecream2.enabled = false;
+        Computers_Icecream3.enabled = false;
     }
 
     public void AddButtonDown() {
@@ -95,12 +100,6 @@ public class BaskinGameManager : MonoBehaviour
         else
             GuideText.text = "당신의 패배입니다";
         GameMode = 0;
-        Players_Icecream1.enabled = false;
-        Players_Icecream2.enabled = false;
-        Players_Icecream3.enabled = false;
-        Computers_Icecream1.enabled = false;
-        Computers_Icecream2.enabled = false;
-        Computers_Icecream3.enabled = false;
     }
 
     void ComputerPlay() {
@@ -108,9 +107,9 @@ public class BaskinGameManager : MonoBehaviour
 
         if (delay <= 0 && IcecreamSlot > 0) {
             delay = Random.Range(0.0f, 1.0f - time);
+            TrunOnIcon(false);
             IcecreamSlot--;
             BaskinNum++;
-            TrunOnIcon(false);
         }
     }
 
@@ -123,9 +122,9 @@ public class BaskinGameManager : MonoBehaviour
             Players_Icecream3.enabled = true;
         else if (IsPlayersIcon == false && Computers_Icecream1.enabled == false)
             Computers_Icecream1.enabled = true;
-        else if (IsPlayersIcon == false && Computers_Icecream1.enabled == true)
+        else if (IsPlayersIcon == false && Computers_Icecream2.enabled == false)
             Computers_Icecream2.enabled = true;
-        else if (IsPlayersIcon == false && Computers_Icecream2.enabled == true)
+        else if (IsPlayersIcon == false && Computers_Icecream3.enabled == false)
             Computers_Icecream3.enabled = true;
     }
 }

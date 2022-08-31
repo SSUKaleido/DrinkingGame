@@ -1470,7 +1470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &264490904
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2193,7 +2193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &541691351
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4534,13 +4534,13 @@ MonoBehaviour:
   StartMenu: {fileID: 1432512235}
   PracticeMode_SelectMenu: {fileID: 541691354}
   PracticeMode_TrainGame: {fileID: 1454727429}
-  PracticeMode_BaskinGame: {fileID: 0}
+  PracticeMode_BaskinGame: {fileID: 1834854421}
   PracticeMode_RabbitGame: {fileID: 264490907}
   PracticeMode_FruitsGame: {fileID: 2049251551}
   StartMenu_Group: {fileID: 1432512237}
   PracticeMode_SelectMenu_Group: {fileID: 541691351}
   PracticeMode_TrainGame_Group: {fileID: 1454727426}
-  PracticeMode_BaskinGame_Group: {fileID: 0}
+  PracticeMode_BaskinGame_Group: {fileID: 1834854423}
   PracticeMode_RabbitGame_Group: {fileID: 264490904}
   PracticeMode_FruitsGame_Group: {fileID: 2049251548}
   ExplainMenu: {fileID: 2069715155}
@@ -5396,7 +5396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1432512233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5510,7 +5510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &1454727426
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6602,6 +6602,7 @@ GameObject:
   - component: {fileID: 1834854421}
   - component: {fileID: 1834854420}
   - component: {fileID: 1834854419}
+  - component: {fileID: 1834854423}
   m_Layer: 5
   m_Name: PracticeBaskin_Canvas
   m_TagString: Untagged
@@ -6691,6 +6692,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1834854423
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834854418}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1852679129
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,7 +7803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &2049251548
 CanvasGroup:
   m_ObjectHideFlags: 0
