@@ -11,9 +11,9 @@ public class HuminGameManager : MonoBehaviour
     public Image timeImage;
     public float duration, currentTime;
     public List<string> consonantList = new List<string>() { "ぁ", "い", "ぇ", "ぉ", "け", "げ", "さ", "し", "じ", "ず", "せ", "ぜ", "そ", "ぞ" };
-    public TMP_InputField playerAnswerInput;
-    public string playerAnswer = null;
+
     
+
 
     int start = 0;
     int rand1, rand2;
@@ -22,7 +22,6 @@ public class HuminGameManager : MonoBehaviour
     void Start()
     {
         currentTime = duration;
-        playerAnswer = playerAnswerInput.GetComponent<InputField>().text;
     }
 
     // Update is called once per frame
@@ -33,7 +32,7 @@ public class HuminGameManager : MonoBehaviour
             start = 1;
             giveConsonants();
             getAnswer();
-            //answerCheck();
+            answerCheck();
         }
     }
 
@@ -46,21 +45,13 @@ public class HuminGameManager : MonoBehaviour
     }
 
     void getAnswer()
-    {
-        while(true)
-        {
-            if(playerAnswer.Length > 0 && Input.GetButtonDown("Submit"))
-            {
-                playerAnswer = playerAnswerInput.text;
-                break;
-            }
-        }
+    { 
+   
     }
 
-    /*void answerCheck()
+    void answerCheck()
     {
 
     }
-    */
 }
     

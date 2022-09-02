@@ -476,8 +476,6 @@ MonoBehaviour:
   - "\u314C"
   - "\u314D"
   - "\u314E"
-  playerAnswerInput: {fileID: 0}
-  playerAnswer: 
 --- !u!114 &52822870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,7 +2170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a972361e8fb6943a95029fdd3d1b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  consonants: {fileID: 0}
+  consonants: {fileID: 6625711131276832449}
   timeImage: {fileID: 0}
   duration: 0
   currentTime: 0
@@ -2191,8 +2189,6 @@ MonoBehaviour:
   - "\u314C"
   - "\u314D"
   - "\u314E"
-  playerAnswerInput: {fileID: 398425040}
-  playerAnswer: 
 --- !u!1 &439284222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,6 +4457,8 @@ GameObject:
   - component: {fileID: 963337242}
   - component: {fileID: 963337244}
   - component: {fileID: 963337243}
+  - component: {fileID: 963337246}
+  - component: {fileID: 963337245}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -4475,7 +4473,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963337241}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4585,6 +4583,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963337241}
   m_CullTransparentMesh: 1
+--- !u!114 &963337245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963337241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a972361e8fb6943a95029fdd3d1b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consonants: {fileID: 0}
+  timeImage: {fileID: 0}
+  duration: 0
+  currentTime: 0
+  consonantList:
+  - "\u3131"
+  - "\u3134"
+  - "\u3137"
+  - "\u3139"
+  - "\u3141"
+  - "\u3142"
+  - "\u3145"
+  - "\u3147"
+  - "\u3148"
+  - "\u314A"
+  - "\u314B"
+  - "\u314C"
+  - "\u314D"
+  - "\u314E"
+--- !u!114 &963337246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963337241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a972361e8fb6943a95029fdd3d1b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consonants: {fileID: 0}
+  timeImage: {fileID: 0}
+  duration: 0
+  currentTime: 0
+  consonantList:
+  - "\u3131"
+  - "\u3134"
+  - "\u3137"
+  - "\u3139"
+  - "\u3141"
+  - "\u3142"
+  - "\u3145"
+  - "\u3147"
+  - "\u3148"
+  - "\u314A"
+  - "\u314B"
+  - "\u314C"
+  - "\u314D"
+  - "\u314E"
 --- !u!1 &996529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -9161,5 +9221,45 @@ MonoBehaviour:
   - "\u314C"
   - "\u314D"
   - "\u314E"
-  playerAnswerInput: {fileID: 398425040}
-  playerAnswer: 
+--- !u!114 &6625711131276832449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 10418853559234977, guid: a25e3b28edb184b41b1b72c6cea40b6d, type: 3}
+  m_PrefabInstance: {fileID: 6625711131276832444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375123330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6625711131276832451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375123330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a972361e8fb6943a95029fdd3d1b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  consonants: {fileID: 6625711131276832449}
+  timeImage: {fileID: 0}
+  duration: 0
+  currentTime: 0
+  consonantList:
+  - "\u3131"
+  - "\u3134"
+  - "\u3137"
+  - "\u3139"
+  - "\u3141"
+  - "\u3142"
+  - "\u3145"
+  - "\u3147"
+  - "\u3148"
+  - "\u314A"
+  - "\u314B"
+  - "\u314C"
+  - "\u314D"
+  - "\u314E"
