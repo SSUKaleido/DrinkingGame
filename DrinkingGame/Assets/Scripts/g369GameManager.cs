@@ -10,13 +10,20 @@ public class g369GameManager : MonoBehaviour
     public TextMeshProUGUI g369number;
     public Slider TimerSlider;
 
-    float time = 0.0f;
+    float time = 0.0f, delay = 0.0f;
     int number = 1;
+
+    // Game over
+    public GameObject tilePrefab;
+    public Transform backgroundNode;
+    public Transform boardNode;
+    public Transform tetrominoNode;
+    public GameObject gameoverPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        gameoverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,25 +33,38 @@ public class g369GameManager : MonoBehaviour
         TimerSlider.value = time;
         g369number.text = number.ToString();
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (number == 1)
         {
-            number += 1;
             clap.enabled = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (number % 10 == 3 || number % 10 == 6 || number % 10 == 9)
+            {
+                gameoverPanel.SetActive(true);
+            }
+            else 
+            {
+                number += 1;
+                clap.enabled = false;
+            }
 
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            number += 1;
-            clap.enabled = true;
-
+            if (number % 10 == 3 || number % 10 == 6 || number % 10 == 9)
+            {
+                number += 1;
+                clap.enabled = true;
+            }
+            else
+            {
+                gameoverPanel.SetActive(true);
+            }
         }
 
     }
-
-
-    // 글자 색 모음string[] color_str = { "abdee6", "cbaacb", "ffffb5", "ffccb6", "f3b0c3", "000000"};
-    // 글자 색 인덱스int index = 0;private void Button_Click(object sender, RoutedEventArgs e){    
-    // 라벨 색 변경    L1.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff" + color_str[index++]));    
-    // 색상 변경    if (index == color_str.Length){index = 0;}}
-    
 }
+
+
