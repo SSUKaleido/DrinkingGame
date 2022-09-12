@@ -38,31 +38,34 @@ public class HuminGameManager : MonoBehaviour
 
     void Update()
     {
-        if (get == 1)
+        if (enabled == true)
         {
-            time += Time.deltaTime;
-            timerSlider.value = time / 15.0f;
+            if (get == 1)
+            {
+                time += Time.deltaTime;
+                timerSlider.value = time / 15.0f;
 
+            }
+            if (Input.GetKeyDown(KeyCode.Return) && start == 0)
+            {
+                playerAnswerInput.text = "";
+                redCircle.SetActive(false);
+                redLine.SetActive(false);
+
+                giveConsonants();
+                start = 1;
+                time = 0;
+                get = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.Return) && start == 1)
+            {
+                getAnswer();
+                answerCheck();
+
+                start = 0;
+                get = 0;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Return) && start == 0)
-        {
-            playerAnswerInput.text = "";
-            redCircle.SetActive(false);
-            redLine.SetActive(false);
-
-            giveConsonants();
-            start = 1;
-            time = 0;
-            get = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.Return) && start == 1)
-        {
-            getAnswer();
-            answerCheck();
-
-            start = 0;
-            get = 0;
-        }   
     }
 
     
