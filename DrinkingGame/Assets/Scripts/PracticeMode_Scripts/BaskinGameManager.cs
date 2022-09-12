@@ -14,6 +14,13 @@ public class BaskinGameManager : MonoBehaviour
     int GameMode = 0, IcecreamSlot = 0, BaskinNum = 0;
     float time = 0.0f, delay = 0.0f;
 
+    // Game over
+    public GameObject tilePrefab;
+    public Transform backgroundNode;
+    public Transform boardNode;
+    public Transform tetrominoNode;
+    public GameObject gameoverPanel;
+
     // Start is called before the first frame update
     void Start()
     {
