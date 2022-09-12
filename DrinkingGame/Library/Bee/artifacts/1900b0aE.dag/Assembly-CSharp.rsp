@@ -392,6 +392,7 @@
 "Assets/Others/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/PracticeMode_Scripts/BaskinGameManager.cs"
+"Assets/Scripts/PracticeMode_Scripts/FruitsGamemanager.cs"
 "Assets/Scripts/PracticeMode_Scripts/HuminGameManager.cs"
 "Assets/Scripts/PracticeMode_Scripts/STBerryGamemanager.cs"
 "Assets/Scripts/SelectMenu_CloseExplain.cs"

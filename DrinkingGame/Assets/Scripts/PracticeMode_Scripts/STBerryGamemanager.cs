@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class STBerryGamemanager : MonoBehaviour
 {
     public Image[] Player;
-    public Image Strawberry, StartButton, AddButton, Exit;
+    public Image Strawberry, StartButton, AddButton, ExitButton;
     public Slider SliderT;
     bool GameMode = false;
+    bool isdelay;
     int PlayerNumber, TurnNumber, PlayerEnter, Performance;
     float MaxTime, MinTime;
 
@@ -29,19 +30,26 @@ public class STBerryGamemanager : MonoBehaviour
     IEnumerator Start()
     {
         Strawberry.gameObject.SetActive(false);
+        StartButton.gameObject.SetActive(true);
         PlayerNumber = Random.Range(3, 9);
         for (int i = 0; i<PlayerNumber;i++)
         {
             Player[i].enabled = true;
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
-    // Update is called once per frame
+     //Update is called once per frame
     void Update()
     {
         SliderT.value = (float)MinTime/MaxTime;
         if (GameMode == true)
         {
+            if (isdelay==false)
+            {
+                isdelay = true;
+                StartCoroutine("GameProgress");
+                StartCoroutine("ProgressDelay");
+            }
             if (MinTime < 0)
             {
                 MinTime = 0.5f;
@@ -50,30 +58,126 @@ public class STBerryGamemanager : MonoBehaviour
             {
                 MinTime -= Time.deltaTime;
             }
-            if (Input.GetKeyDown(KeyCode.S))
-                PlayerEnter++;
-            if (TurnNumber == 0)
-            {
-                StartCoroutine("Progress_PlayerTurn");
-            }
-            else
-            {
-                StartCoroutine("Progress_ComputerTurn");
-            }   
+            if (Input.GetKeyDown(KeyCode.Q))
+                Addberry();
         }
     }
-    void GameStart()
+    public void Addberry()
+    {
+        PlayerEnter++;
+    }
+    public void GameStart()
     {
         GameMode = true;
         Performance = 1;
         TurnNumber = Random.Range(0, PlayerNumber);
         StartButton.gameObject.SetActive(false);
         Player[TurnNumber].transform.localScale = new Vector2(1.5f, 1.5f);
+        isdelay = false;
     }
-    void NextTurn()
+    IEnumerator GameProgress()
     {
+        if (TurnNumber == 0)
+        {
+            if (Performance <= 4)
+            {
+                yield return new WaitForSeconds(2f - 0.5f * Performance);
+                for (int i = Performance; i > 0; i--)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                    if (PlayerEnter == 1)
+                    {
+                        PlayerEnter = 0;
+                    }
+                    else
+                    {
+                        Debug.Log("실패");
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                    if (PlayerEnter == 1)
+                    {
+                        PlayerEnter = 0;
+                    }
+                    else
+                    {
+                        Debug.Log("실패");
+                    }
+                }
+                yield return new WaitForSeconds(2f - (0.5f * (Performance - 4)));
+                for (int i = Performance - 4; i > 0; i--)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                    if (PlayerEnter == 1)
+                    {
+                        PlayerEnter = 0;
+                    }
+                    else
+                    {
+                        Debug.Log("실패");
+                    }
+                }
+            }
+        }
+        else
+        {
+            if (Performance <= 4)
+            {
+                yield return new WaitForSeconds(2f - 0.5f * Performance);
+                for (int i = Performance; i > 0; i--)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                }
+                yield return new WaitForSeconds(2f - (0.5f * (Performance - 4)));
+                for (int i = Performance - 4; i > 0; i--)
+                {
+                    Strawberry.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(0.25f);
+                    Strawberry.gameObject.SetActive(false);
+                    yield return new WaitForSeconds(0.25f);
+                }
+            }
+        }
+    }
+    IEnumerator ProgressDelay()
+    {
+        if (Performance <=4)
+        {
+            yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(4f);
+        }
         Player[TurnNumber].transform.localScale = new Vector2(1f, 1f);
-        if (TurnNumber == PlayerNumber-1)
+        if (TurnNumber == PlayerNumber - 1)
             TurnNumber = 0;
         else
             TurnNumber++;
@@ -82,64 +186,14 @@ public class STBerryGamemanager : MonoBehaviour
             Performance = 1;
         else
             Performance++;
-        StopAllCoroutines();
+        isdelay = false;
     }
-    IEnumerator Progress_ComputerTurn()
+    IEnumerator ComputerTurn()
     {
-        if (Performance <= 4)
-        {
-            yield return new WaitForSeconds(2f - 0.5f * Performance);
-            for (int A = Performance; A > 0; A--)
-            {
-                Strawberry.gameObject.SetActive(true);
-                yield return new WaitForSeconds(0.25f);
-                Strawberry.gameObject.SetActive(false);
-                yield return new WaitForSeconds(0.25f);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                Strawberry.gameObject.SetActive(true);
-                yield return new WaitForSeconds(0.25f);
-                Strawberry.gameObject.SetActive(false);
-                yield return new WaitForSeconds(0.25f);
-            }
-            yield return new WaitForSeconds(2f - (0.5f * (Performance - 4)));
-            for (int B = Performance - 4; B > 0; B--)
-            {
-                Strawberry.gameObject.SetActive(true);
-                yield return new WaitForSeconds(0.25f);
-                Strawberry.gameObject.SetActive(false);
-                yield return new WaitForSeconds(0.25f);
-            }
-        }
-        NextTurn();
-    }
-    IEnumerator Progress_PlayerTurn()
-    {
-        if (Performance <= 4)
-        {
-            yield return new WaitForSeconds(2f - 0.5f * Performance);
-            for (int C = Performance; C > 0; C--)
-            {
-                PlayerPerformance();
-            }
-        }
-        else
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                PlayerPerformance();
-            }
-            yield return new WaitForSeconds(2f - (0.5f * (TurnNumber - 4)));
-            for (int D = Performance - 4; D > 0; D--)
-            {
-                PlayerPerformance();
-            }
-        }
-        NextTurn();
+        Strawberry.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        Strawberry.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
     }
     IEnumerator PlayerPerformance()
     {
@@ -153,7 +207,12 @@ public class STBerryGamemanager : MonoBehaviour
         }
         else
         {
-            GameMode = false;
+            Debug.Log("실패");
         }
+    }
+    public void GameOver()
+    {
+        Debug.Log("???");
+        Application.Quit();
     }
 }
