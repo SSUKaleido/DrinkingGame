@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         StartMenu.enabled = true;
         PracticeMode_SelectMenu.enabled = false;
         PracticeMode_SelectMenu_Group.interactable = false;
+        /*
         PracticeMode_HangeulGame.enabled = false;
         PracticeMode_HangeulGame_Group.interactable = false;
         PracticeMode_BaskinGame.enabled = false;
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
         PracticeMode_RabbitGame.enabled = false;
         PracticeMode_RabbitGame_Group.interactable = false;
         PracticeMode_FruitsGame.enabled = false;
-        PracticeMode_FruitsGame_Group.interactable = false;
+        PracticeMode_FruitsGame_Group.interactable = false; */
     }
 
     // Update is called once per frame
