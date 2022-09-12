@@ -35,11 +35,6 @@ public class FruitsGamemanager : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        Fruits[0].gameObject.SetActive(false);
-        Fruits[1].gameObject.SetActive(false);
-        Fruits[2].gameObject.SetActive(false);
-        Fruits[3].gameObject.SetActive(false);
-        Fruits[4].gameObject.SetActive(false);
         StartButton.gameObject.SetActive(true);
         PlayerNumber = Random.Range(3, 9);
         for (int i = 0; i<PlayerNumber;i++)
@@ -70,11 +65,35 @@ public class FruitsGamemanager : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Q))
                 Addberry();
+            if (Input.GetKeyDown(KeyCode.W))
+                AddCarrot();
+            if (Input.GetKeyDown(KeyCode.E))
+                AddWater();
+            if (Input.GetKeyDown(KeyCode.R))
+                AddOriental();
+            if (Input.GetKeyDown(KeyCode.T))
+                AddMelon();
         }
     }
     public void Addberry()
     {
         BerryEnter++;
+    }
+    public void AddCarrot()
+    {
+        CarrotEnter++;
+    }
+    public void AddWater()
+    {
+        WaterEnter++;
+    }
+    public void AddOriental()
+    {
+        OrientalEnter++;
+    }
+    public void AddMelon()
+    {
+        MelonEnter++;
     }
     public void GameStart()
     {
@@ -89,90 +108,644 @@ public class FruitsGamemanager : MonoBehaviour
     {
         if (TurnNumber == 0)
         {
-            if (Performance <= 4)
+            if (Performance == 1)
             {
-                yield return new WaitForSeconds(2f - 0.5f * Performance);
-                for (int i = Performance; i > 0; i--)
+                yield return new WaitForSeconds(1.5f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
                 {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                    if (BerryEnter == 1)
-                    {
-                        BerryEnter = 0;
-                    }
-                    else
-                    {
-                        Debug.Log("실패");
-                    }
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
                 }
             }
-            else
+            if (Performance == 2)
             {
-                for (int i = 0; i < 4; i++)
+                yield return new WaitForSeconds(1f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
                 {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                    if (BerryEnter == 1)
-                    {
-                        BerryEnter = 0;
-                    }
-                    else
-                    {
-                        Debug.Log("실패");
-                    }
+                    BerryEnter = 0;
                 }
-                yield return new WaitForSeconds(2f - (0.5f * (Performance - 4)));
-                for (int i = Performance - 4; i > 0; i--)
+                else
                 {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                    if (BerryEnter == 1)
-                    {
-                        BerryEnter = 0;
-                    }
-                    else
-                    {
-                        Debug.Log("실패");
-                    }
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 3)
+            {
+                yield return new WaitForSeconds(0.5f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 4)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (OrientalEnter == 1)
+                {
+                    OrientalEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 5)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (OrientalEnter == 1)
+                {
+                    OrientalEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                yield return new WaitForSeconds(1.5f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (MelonEnter == 1)
+                {
+                    MelonEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 6)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (OrientalEnter == 1)
+                {
+                    OrientalEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                yield return new WaitForSeconds(1f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (MelonEnter == 1)
+                {
+                    MelonEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 7)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (OrientalEnter == 1)
+                {
+                    OrientalEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                yield return new WaitForSeconds(0.5f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (MelonEnter == 1)
+                {
+                    MelonEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+            }
+            if (Performance == 8)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (OrientalEnter == 1)
+                {
+                    OrientalEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (MelonEnter == 1)
+                {
+                    MelonEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (BerryEnter == 1)
+                {
+                    BerryEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (CarrotEnter == 1)
+                {
+                    CarrotEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
+                }
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                if (WaterEnter == 1)
+                {
+                    WaterEnter = 0;
+                }
+                else
+                {
+                    Debug.Log("실패");
                 }
             }
         }
         else
         {
-            if (Performance <= 4)
+            if (Performance == 1)
             {
-                yield return new WaitForSeconds(2f - 0.5f * Performance);
-                for (int i = Performance; i > 0; i--)
-                {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                }
+                yield return new WaitForSeconds(1.5f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
             }
-            else
+            if (Performance == 2)
             {
-                for (int i = 0; i < 4; i++)
-                {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                }
-                yield return new WaitForSeconds(2f - (0.5f * (Performance - 4)));
-                for (int i = Performance - 4; i > 0; i--)
-                {
-                    Fruits[0].gameObject.SetActive(true);
-                    yield return new WaitForSeconds(0.25f);
-                    Fruits[0].gameObject.SetActive(false);
-                    yield return new WaitForSeconds(0.25f);
-                }
+                yield return new WaitForSeconds(1f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 3)
+            {
+                yield return new WaitForSeconds(0.5f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 4)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 5)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(1.5f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 6)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(1f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 7)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                yield return new WaitForSeconds(0.5f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+            }
+            if (Performance == 8)
+            {
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[3].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[4].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[0].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[1].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.25f);
+                Fruits[2].gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.25f);
             }
         }
     }
@@ -180,11 +753,11 @@ public class FruitsGamemanager : MonoBehaviour
     {
         if (Performance <=4)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(2.01f);
         }
         else
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(4.02f);
         }
         Player[TurnNumber].transform.localScale = new Vector2(1f, 1f);
         if (TurnNumber == PlayerNumber - 1)
@@ -197,28 +770,6 @@ public class FruitsGamemanager : MonoBehaviour
         else
             Performance++;
         isdelay = false;
-    }
-    IEnumerator ComputerTurn()
-    {
-        Fruits[0].gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.25f);
-        Fruits[0].gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.25f);
-    }
-    IEnumerator PlayerPerformance()
-    {
-        Fruits[0].gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.25f);
-        Fruits[0].gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.25f);
-        if (BerryEnter == 1)
-        {
-            BerryEnter = 0;
-        }
-        else
-        {
-            Debug.Log("실패");
-        }
     }
     public void GameOver()
     {
