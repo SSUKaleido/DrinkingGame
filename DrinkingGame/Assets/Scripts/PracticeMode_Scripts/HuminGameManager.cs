@@ -17,7 +17,7 @@ public class HuminGameManager : MonoBehaviour
     float time = 0.0f;
 
     // giveConsonants
-    public List<string> consonantList = new List<string>() { "��", "��", "��", "��", "��", "��", "��", "��", "��", "��", "��", "��", "��", "��" };
+    public List<string> consonantList = new List<string>() { "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  " };
     public TextMeshProUGUI consonant1;
     public TextMeshProUGUI consonant2;
 
@@ -42,37 +42,38 @@ public class HuminGameManager : MonoBehaviour
 
     void Update()
     {
-        if (IsGameStart == true)
+        if (IsGameStart == true && get == 1)
         {
-            if (get == 1)
-            {
-                time += Time.deltaTime;
-                timerSlider.value = time / 15.0f;
+            time += Time.deltaTime;
+            timerSlider.value = time / 15.0f;
 
-            }
-            if (Input.GetKeyDown(KeyCode.Return) && start == 0)
-            {
-                playerAnswerInput.text = "";
-                redCircle.SetActive(false);
-                redLine.SetActive(false);
+        }
+        if (IsGameStart == true && Input.GetKeyDown(KeyCode.Return) && start == 0)
+        {
+            playerAnswerInput.text = "";
+            redCircle.SetActive(false);
+            redLine.SetActive(false);
 
-                giveConsonants();
-                start = 1;
-                time = 0;
-                get = 1;
-            }
-            else if (Input.GetKeyDown(KeyCode.Return) && start == 1)
-            {
-                getAnswer();
-                answerCheck();
+            giveConsonants();
+            start = 1;
+            time = 0f;
+            get = 1;
+        }
+        else if (IsGameStart == true && Input.GetKeyDown(KeyCode.Return) && start == 1)
+        {
+            getAnswer();
+            answerCheck();
 
-                start = 0;
-                get = 0;
-            }
+            start = 0;
+            get = 0;
         }
     }
 
-    public void GameStart() {
+    public void GameStart()
+    {
+        start = 0;
+        get = 0;
+        time = 0.0f;
         IsGameStart = true;
     }
 
@@ -144,4 +145,3 @@ public class HuminGameManager : MonoBehaviour
     }
 }
 
-    
