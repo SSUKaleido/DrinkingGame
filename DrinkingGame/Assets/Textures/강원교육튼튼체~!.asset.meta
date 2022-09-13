@@ -1,8 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:DrinkingGame/Assets/Textures/강원교육튼튼체~!.asset.meta
 guid: 48924b0730b38af459832200d0d3b49b
 NativeFormatImporter:
+========
+guid: 6515f037223fa9440b886c45e6ed479f
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> chanwoo-2:DrinkingGame/Assets/3LE Low Poly Cloud Pack.meta
   externalObjects: {}
-  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
