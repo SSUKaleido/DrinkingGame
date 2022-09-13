@@ -10,6 +10,9 @@ public class g369GameManager : MonoBehaviour
     public TextMeshProUGUI g369number;
     public Slider TimerSlider;
 
+    public AudioSource EffectAudio;
+    [SerializeField] public AudioClip[] EffectAudioClip;
+
     int number = 1, NumofThree = 0, EnterNum = 0;
     float time = 0.0f;
     bool IsGamestart = false, ClapShowDelay = false;
@@ -62,10 +65,15 @@ public class g369GameManager : MonoBehaviour
                     EnterNum++;
                 else
                     GameOver();
+                EffectAudio.clip = EffectAudioClip[3];
+                EffectAudio.Play();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && NumofThree == 0)
+            if (Input.GetKeyDown(KeyCode.Space) && NumofThree == 0) {
+                EffectAudio.clip = EffectAudioClip[7];
+                EffectAudio.Play();
                 NextTurn();
+            }
             else if (Input.GetKeyDown(KeyCode.Space) && NumofThree != 0)
                 GameOver();
         }

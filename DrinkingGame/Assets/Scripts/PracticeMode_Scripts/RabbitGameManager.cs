@@ -15,6 +15,9 @@ public class RabbitGameManager : MonoBehaviour
     Vector3[] PersonPoint = new Vector3[8];
     Vector3 MousePosition;
 
+    public AudioSource EffectAudio;
+    [SerializeField] public AudioClip[] EffectAudioClip;
+
     int RandomNum = 0, BeforeNum = 0, TurnNum = 0;
     float time = 0.0f, TimerUpper = 0.5f;
     bool IsGameStart = false, IsPlayerLeftMove = true, IsPlayerRightMove = true, IsPlayerChoiceTurn = false;
@@ -51,6 +54,8 @@ public class RabbitGameManager : MonoBehaviour
             if (time > TimerUpper) {
                 if(IsPlayerLeftMove == false || IsPlayerRightMove == false) {
                     GameOver(0);
+                    EffectAudio.clip = EffectAudioClip[1];
+                    EffectAudio.Play();
                 }
 
                 time = 0.0f;
@@ -156,6 +161,8 @@ public class RabbitGameManager : MonoBehaviour
             HorizontalShake_CompterPerson(Person[1]);
             GameOver(2);
         }
+        EffectAudio.clip = EffectAudioClip[8];
+        EffectAudio.Play();
     }
 
     void NextTurn_Computer() {
@@ -223,6 +230,9 @@ public class RabbitGameManager : MonoBehaviour
             HorizontalShake_CompterPerson(Person[1]);
             HorizontalShake_CompterPerson(Person[2]);
         }
+
+        EffectAudio.clip = EffectAudioClip[5];
+        EffectAudio.Play();
     }
 
     void LeftShake_PlayerPerson() {
@@ -233,6 +243,8 @@ public class RabbitGameManager : MonoBehaviour
         }
         else {
             GameOver(0);
+            EffectAudio.clip = EffectAudioClip[1];
+            EffectAudio.Play();
         }
     }
 
@@ -244,6 +256,8 @@ public class RabbitGameManager : MonoBehaviour
         }
         else {
             GameOver(0);
+            EffectAudio.clip = EffectAudioClip[1];
+            EffectAudio.Play();
         }
     }
 

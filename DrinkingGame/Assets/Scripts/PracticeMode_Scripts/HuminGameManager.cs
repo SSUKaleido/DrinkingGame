@@ -9,11 +9,15 @@ public class HuminGameManager : MonoBehaviour
 
     public Slider timerSlider;
 
+    public AudioSource EffectAudio;
+    [SerializeField] public AudioClip[] EffectAudioClip;
+
     int start = 0, get = 0;
+    bool IsGameStart = false;
     float time = 0.0f;
 
     // giveConsonants
-    public List<string> consonantList = new List<string>() { "¤¡", "¤¤", "¤§", "¤©", "¤±", "¤²", "¤µ", "¤·", "¤¸", "¤º", "¤»", "¤¼", "¤½", "¤¾" };
+    public List<string> consonantList = new List<string>() { "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½", "ï¿½ï¿½" };
     public TextMeshProUGUI consonant1;
     public TextMeshProUGUI consonant2;
 
@@ -38,7 +42,7 @@ public class HuminGameManager : MonoBehaviour
 
     void Update()
     {
-        if (enabled == true)
+        if (IsGameStart == true)
         {
             if (get == 1)
             {
@@ -68,7 +72,9 @@ public class HuminGameManager : MonoBehaviour
         }
     }
 
-    
+    public void GameStart() {
+        IsGameStart = true;
+    }
 
     void giveConsonants()
     {
@@ -123,11 +129,17 @@ public class HuminGameManager : MonoBehaviour
 
         if (randConsUni1 == playerAnswerUni1 && randConsUni2 == playerAnswerUni2)
         {
+            EffectAudio.clip = EffectAudioClip[8];
+            EffectAudio.Play();
             redCircle.SetActive(true);
+            IsGameStart = false;
         }
         else
         {
+            EffectAudio.clip = EffectAudioClip[1];
+            EffectAudio.Play();
             redLine.SetActive(true);
+            IsGameStart = false;
         }
     }
 }

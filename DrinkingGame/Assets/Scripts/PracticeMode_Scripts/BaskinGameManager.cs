@@ -9,17 +9,14 @@ public class BaskinGameManager : MonoBehaviour
     public Slider TimerSlider;
     public Image Players_Icecream1, Players_Icecream2, Players_Icecream3;
     public Image Computers_Icecream1, Computers_Icecream2, Computers_Icecream3;
+
+    public AudioSource EffectAudio;
+    [SerializeField] public AudioClip[] EffectAudioClip;
+
     public TextMeshProUGUI NumberText, GuideText;
 
     int GameMode = 0, IcecreamSlot = 0, BaskinNum = 0;
     float time = 0.0f, delay = 0.0f;
-
-    // Game over
-    public GameObject tilePrefab;
-    public Transform backgroundNode;
-    public Transform boardNode;
-    public Transform tetrominoNode;
-    public GameObject gameoverPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +94,8 @@ public class BaskinGameManager : MonoBehaviour
     void AddIcecreamNum() {
         IcecreamSlot++; BaskinNum++;
         TrunOnIcon(true);
+        EffectAudio.clip = EffectAudioClip[5];
+        EffectAudio.Play();
     }
 
     void GameOver(bool PlayerMiss) {
@@ -117,6 +116,8 @@ public class BaskinGameManager : MonoBehaviour
             TrunOnIcon(false);
             IcecreamSlot--;
             BaskinNum++;
+            EffectAudio.clip = EffectAudioClip[5];
+            EffectAudio.Play();
         }
     }
 

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Canvas PracticeMode_BaskinGame;
     public Canvas PracticeMode_RabbitGame;
     public Canvas PracticeMode_FruitsGame;
+    public Canvas PracticeMode_369Game;
 
     public CanvasGroup StartMenu_Group;
     public CanvasGroup PracticeMode_SelectMenu_Group;
@@ -19,8 +20,12 @@ public class GameManager : MonoBehaviour
     public CanvasGroup PracticeMode_BaskinGame_Group;
     public CanvasGroup PracticeMode_RabbitGame_Group;
     public CanvasGroup PracticeMode_FruitsGame_Group;
+    public CanvasGroup PracticeMode_369Game_Group;
 
     public GameObject ExplainMenu;
+
+    public AudioSource EffectAudio;
+    [SerializeField] public AudioClip[] EffectAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +46,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "RealMode_Scene")
-            LoadStartMenu();
+
     }
 
     public void LoadPracticeMode() {
@@ -50,6 +54,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_SelectMenu_Group.interactable = true;
         ExplainMenu.SetActive(false);
         StartMenu.enabled = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void LoadRealMode() {
@@ -65,6 +71,9 @@ public class GameManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "RealMode_Scene") {
             SceneManager.LoadScene("StartScene");
         }
+
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void LoadPracticeGame_Hangeul() {
@@ -72,6 +81,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_HangeulGame_Group.interactable = true;
         PracticeMode_SelectMenu.enabled = false;
         PracticeMode_SelectMenu_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void LoadPracticeGame_Baskin() {
@@ -79,6 +90,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_BaskinGame_Group.interactable = true;
         PracticeMode_SelectMenu.enabled = false;
         PracticeMode_SelectMenu_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void LoadPracticeGame_Rabbit() {
@@ -86,6 +99,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_RabbitGame_Group.interactable = true;
         PracticeMode_SelectMenu.enabled = false;
         PracticeMode_SelectMenu_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void LoadPracticeGame_Fruits() {
@@ -93,6 +108,17 @@ public class GameManager : MonoBehaviour
         PracticeMode_FruitsGame_Group.interactable = true;
         PracticeMode_SelectMenu.enabled = false;
         PracticeMode_SelectMenu_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
+    }
+
+    public void LoadPracticeGame_369() {
+        PracticeMode_369Game.enabled = true;
+        PracticeMode_369Game_Group.interactable = true;
+        PracticeMode_SelectMenu.enabled = false;
+        PracticeMode_SelectMenu_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void UnloadPracticeGame_Hangeul() {
@@ -100,6 +126,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_SelectMenu_Group.interactable = true;
         PracticeMode_HangeulGame.enabled = false;
         PracticeMode_HangeulGame_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void UnloadPracticeGame_Baskin() {
@@ -107,6 +135,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_SelectMenu_Group.interactable = true;
         PracticeMode_BaskinGame.enabled = false;
         PracticeMode_BaskinGame_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void UnloadPracticeGame_Rabbit() {
@@ -114,6 +144,8 @@ public class GameManager : MonoBehaviour
         PracticeMode_SelectMenu_Group.interactable = true;
         PracticeMode_RabbitGame.enabled = false;
         PracticeMode_RabbitGame_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void UnloadPracticeGame_Fruits() {
@@ -121,6 +153,17 @@ public class GameManager : MonoBehaviour
         PracticeMode_SelectMenu_Group.interactable = true;
         PracticeMode_FruitsGame.enabled = false;
         PracticeMode_FruitsGame_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
+    }
+
+    public void UnloadPracticeGame_369() {
+        PracticeMode_SelectMenu.enabled = true;
+        PracticeMode_SelectMenu_Group.interactable = true;
+        PracticeMode_369Game.enabled = false;
+        PracticeMode_369Game_Group.interactable = false;
+        EffectAudio.clip = EffectAudioClip[0];
+        EffectAudio.Play();
     }
 
     public void Conclusion() {
