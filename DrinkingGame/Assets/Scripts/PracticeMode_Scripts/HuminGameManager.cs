@@ -48,6 +48,13 @@ public class HuminGameManager : MonoBehaviour
             timerSlider.value = time / 15.0f;
 
         }
+        if (time > 15.0f) {
+            EffectAudio.clip = EffectAudioClip[1];
+            EffectAudio.Play();
+            redLine.SetActive(true);
+            IsGameStart = false;
+        }
+
         if (IsGameStart == true && Input.GetKeyDown(KeyCode.Return) && start == 0)
         {
             playerAnswerInput.text = "";
