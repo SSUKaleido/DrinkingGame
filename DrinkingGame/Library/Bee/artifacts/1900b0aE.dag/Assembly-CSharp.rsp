@@ -395,9 +395,11 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/ImageLineRenderer.cs"
 "Assets/Scripts/PracticeMode_Scripts/BaskinGameManager.cs"
+"Assets/Scripts/PracticeMode_Scripts/FruitsGamemanager.cs"
 "Assets/Scripts/PracticeMode_Scripts/g369GameManager.cs"
 "Assets/Scripts/PracticeMode_Scripts/HuminGameManager.cs"
 "Assets/Scripts/PracticeMode_Scripts/RabbitGameManager.cs"
+"Assets/Scripts/PracticeMode_Scripts/STBerryGamemanager.cs"
 "Assets/Scripts/SelectMenu_CloseExplain.cs"
 "Assets/Scripts/SelectMenu_LoadExplain.cs"
 -langversion:9.0
